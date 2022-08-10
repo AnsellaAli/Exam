@@ -23,7 +23,7 @@ public class CardPage {
 
     @Step("Проверяем, что название карт содержит текст {0}")
     public CardPage checkNamesCardsContainsText(String cardName) {
-        $$(CARD_LIST).shouldHave(sizeGreaterThan(0)).stream().map(SelenideElement::getValue).forEach(name -> assertTrue(name.contains(cardName)));
+        $$(CARD_LIST).shouldHave(sizeGreaterThan(0)).stream().map(SelenideElement::getText).forEach(name -> assertTrue(name.contains(cardName)));
         return this;
     }
 }
