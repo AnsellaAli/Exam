@@ -6,8 +6,7 @@ import org.openqa.selenium.By;
 
 import java.util.List;
 
-import static com.codeborne.selenide.CollectionCondition.size;
-import static com.codeborne.selenide.CollectionCondition.sizeGreaterThan;
+import static com.codeborne.selenide.CollectionCondition.*;
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.$$;
 import static org.junit.Assert.assertTrue;
@@ -20,7 +19,7 @@ public class CardPage {
 
     @Step("Выбрать сортировку {0}")
     public CardPage selectTab(String tabName) {
-        $$(TAB_LIST).shouldBe(sizeGreaterThan(0)).find(text(tabName)).click();
+        $$(TAB_LIST).shouldBe(containExactTextsCaseSensitive(tabName)).find(text(tabName)).click();
 
         return this;
     }
@@ -35,3 +34,4 @@ public class CardPage {
         return this;
     }
 }
+
