@@ -26,11 +26,11 @@ public class CardPage {
 
     @Step("Проверяем, что название карт содержит текст {0}")
     public CardPage checkNamesCardsContainsText(String cardName) {
-        for (int i=0;i< $$(CARD_LIST).size(); i++){
-            String card = $$(CARD_LIST).get(i).getOwnText();
-            card.equals(cardName);
-        }
-       // $$(CARD_LIST).shouldHave(sizeGreaterThan(0)).stream().map(SelenideElement::getSelectedValue).forEach(name -> assertTrue(name.contains(cardName)));
+     //   for (int i=0;i< $$(CARD_LIST).size(); i++){
+     //       String card = $$(CARD_LIST).get(i).getOwnText();
+       //     card.equals(cardName);
+     //   }
+       $$(CARD_LIST).shouldHave(sizeGreaterThan(0)).stream().map(SelenideElement::getSelectedValue).forEach(name -> assertTrue(name.contains(cardName)));
         return this;
     }
 }
