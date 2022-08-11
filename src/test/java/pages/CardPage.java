@@ -17,7 +17,7 @@ public class CardPage {
 
     @Step("Выбрать сортировку {0}")
     public CardPage selectTab(String tabName) {
-        $$(TAB_LIST).find(text(tabName)).click();
+        $$(TAB_LIST).shouldBe(size(5)).find(text(tabName)).click();
         return this;
     }
 
